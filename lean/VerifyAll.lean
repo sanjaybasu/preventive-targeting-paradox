@@ -1,0 +1,76 @@
+import PreventiveTargetingParadox
+
+/-!
+# Complete Axiom Audit for `PreventiveTargetingParadox`
+
+Runs `#print axioms` on every exported theorem across all four theorem modules to verify that
+every proof relies solely on Lean 4's standard foundational axioms (`propext`, `Classical.choice`,
+`Quot.sound`) with zero `sorryAx` and zero custom axioms.
+-/
+
+-- Theorem 1: Proximity-to-Death Accounting, Multi-Payer Impossibility, and Churn–Longevity Pincer
+#print axioms PreventiveTargetingParadox.Theorem1.abel_summation_by_parts
+#print axioms PreventiveTargetingParadox.Theorem1.abel_ttd_identity
+#print axioms PreventiveTargetingParadox.Theorem1.abel_ttd_identity_range
+#print axioms PreventiveTargetingParadox.Theorem1.abel_ttd_nonneg_of_muEff_nonneg
+#print axioms PreventiveTargetingParadox.Theorem1.muEff_geometric_constant_eol
+#print axioms PreventiveTargetingParadox.Theorem1.thetaEmp_eq_thetaMCO_zero
+#print axioms PreventiveTargetingParadox.Theorem1.thetaMCO_decomposition
+#print axioms PreventiveTargetingParadox.Theorem1.zero_cost_impossibility_soc
+#print axioms PreventiveTargetingParadox.Theorem1.zero_cost_impossibility_soc_ratio
+#print axioms PreventiveTargetingParadox.Theorem1.zero_cost_impossibility_emp_ratio
+#print axioms PreventiveTargetingParadox.Theorem1.zero_cost_impossibility_mco
+#print axioms PreventiveTargetingParadox.Theorem1.mco_pos_of_strict_threshold
+#print axioms PreventiveTargetingParadox.Theorem1.hasDerivAt_churnNetCost
+#print axioms PreventiveTargetingParadox.Theorem1.hStar_pos
+#print axioms PreventiveTargetingParadox.Theorem1.churnNetCostDeriv_eq_zero_iff
+#print axioms PreventiveTargetingParadox.Theorem1.churnNetCostDeriv_neg_of_lt_hStar
+#print axioms PreventiveTargetingParadox.Theorem1.churnNetCostDeriv_pos_of_gt_hStar
+#print axioms PreventiveTargetingParadox.Theorem1.churnNetCost_strictAntiOn_Icc
+#print axioms PreventiveTargetingParadox.Theorem1.churnNetCost_strictMonoOn_Ici
+#print axioms PreventiveTargetingParadox.Theorem1.churnNetCost_global_min_on_nonneg
+#print axioms PreventiveTargetingParadox.Theorem1.churnNetCost_at_hStar_closed_form
+#print axioms PreventiveTargetingParadox.Theorem1.churn_pincer_impossibility_bound
+#print axioms PreventiveTargetingParadox.Theorem1.private_to_medicare_offloading_witness
+
+-- Theorem 2: Sharp Scarf–Cantelli Ceiling, Lower-Bounded Tightening, and Fréchet–Hoeffding Coupling
+#print axioms PreventiveTargetingParadox.Theorem2.scarf_cantelli_upper_bound
+#print axioms PreventiveTargetingParadox.Theorem2.scarf_cantelli_rationalized_eq
+#print axioms PreventiveTargetingParadox.Theorem2.scarf_cantelli_le_quad
+#print axioms PreventiveTargetingParadox.Theorem2.scarf_cantelli_ceiling_chain
+#print axioms PreventiveTargetingParadox.Theorem2.scarf_cantelli_attainment_witness
+#print axioms PreventiveTargetingParadox.Theorem2.bhatia_davis_variance_bound
+#print axioms PreventiveTargetingParadox.Theorem2.lower_bounded_scarf_upper_bound
+#print axioms PreventiveTargetingParadox.Theorem2.lower_bounded_scarf_of_neg_L_le_mu
+#print axioms PreventiveTargetingParadox.Theorem2.lower_bounded_scarf_le_unconstrained
+#print axioms PreventiveTargetingParadox.Theorem2.lower_bounded_scarf_lt_unconstrained
+#print axioms PreventiveTargetingParadox.Theorem2.lower_bounded_scarf_attainment_witness
+#print axioms PreventiveTargetingParadox.Theorem2.lower_bounded_scarf_regime_sharpness
+#print axioms PreventiveTargetingParadox.Theorem2.frechet_hoeffding_submodular_min
+#print axioms PreventiveTargetingParadox.Theorem2.frechet_hoeffding_comonotonic_reduces_savings
+#print axioms PreventiveTargetingParadox.Theorem2.frechet_hoeffding_two_patient_expectation
+
+-- Theorem 3: Winner's Curse Sandwich and Exact Gaussian Mills-Ratio Sign-Flip Phase Transition
+#print axioms PreventiveTargetingParadox.Theorem3.winners_curse_right_ineq
+#print axioms PreventiveTargetingParadox.Theorem3.winners_curse_sandwich_conditional
+#print axioms PreventiveTargetingParadox.Theorem3.winners_curse_sandwich_fiber_unbiased
+#print axioms PreventiveTargetingParadox.Theorem3.winners_curse_sandwich_product
+#print axioms PreventiveTargetingParadox.Theorem3.null_world_mirage
+#print axioms PreventiveTargetingParadox.Theorem3.millsRatio_lower_bound
+#print axioms PreventiveTargetingParadox.Theorem3.millsRatio_upper_bound
+#print axioms PreventiveTargetingParadox.Theorem3.gaussianPluginNetCost_pos_of_le_lower_threshold
+#print axioms PreventiveTargetingParadox.Theorem3.gaussianPluginNetCost_pos_of_noise_sd
+#print axioms PreventiveTargetingParadox.Theorem3.gaussianPluginNetCost_neg_of_ge_upper_threshold
+#print axioms PreventiveTargetingParadox.Theorem3.gaussianPluginNetCost_strictAntiOn
+#print axioms PreventiveTargetingParadox.Theorem3.gaussian_mills_sign_flip_phase_transition
+
+-- Theorem 4: Generalized Neyman–Pearson Duality, Cross-Subsidization, and Longevity–Targeting Antinomy
+#print axioms PreventiveTargetingParadox.Theorem4.unconstrained_cost_min_eq_sum_min
+#print axioms PreventiveTargetingParadox.Theorem4.unconstrained_cost_min_optimal
+#print axioms PreventiveTargetingParadox.Theorem4.upfront_budget_roi_optimal
+#print axioms PreventiveTargetingParadox.Theorem4.budget_neutral_health_optimal
+#print axioms PreventiveTargetingParadox.Theorem4.budget_neutral_threshold_strictly_dominates_cost_min
+#print axioms PreventiveTargetingParadox.Theorem4.cross_subsidization_strictly_dominates_cost_min
+#print axioms PreventiveTargetingParadox.Theorem4.longevity_targeting_antinomy
+#print axioms PreventiveTargetingParadox.Theorem4.longevity_coupling_rank_inversion_general
+#print axioms PreventiveTargetingParadox.Theorem4.longevity_coupling_rank_inversion_witness

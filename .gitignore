@@ -1,0 +1,22 @@
+# Data, results, build artifacts, and manuscripts (code-only public repo)
+data/
+results/
+output_artifacts/
+CANONICAL_NUMBERS.md
+
+# Lean 4 build cache
+lean/.lake/
+
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# OS & editor junk
+.DS_Store
+.vscode/
+.idea/
+*.swp

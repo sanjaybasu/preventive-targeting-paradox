@@ -1,0 +1,11 @@
+name = "PreventiveTargetingParadox"
+version = "0.1.0"
+defaultTargets = ["PreventiveTargetingParadox"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.20.0"
+
+[[lean_lib]]
+name = "PreventiveTargetingParadox"
