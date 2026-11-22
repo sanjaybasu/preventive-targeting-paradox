@@ -89,15 +89,15 @@ rct_labels = [
 ]
 naive_emp = [r["naive_insample_matched_emp"]["net_cost_per_eligible"] for r in [r_ily1, r_il30, r_cam, r_ohie]]
 naive_se  = [1.96 * r["naive_insample_matched_emp"]["se_per_eligible"] for r in [r_ily1, r_il30, r_cam, r_ohie]]
-oos_dr    = [r["honest_oos_dr"]["net_cost_per_eligible"] for r in [r_ily1, r_il30, r_cam, r_ohie]]
-oos_dr_se = [1.96 * r["honest_oos_dr"]["se_per_eligible"] for r in [r_ily1, r_il30, r_cam, r_ohie]]
+oos_dr    = [r["honest_oos_dr_martingale"]["net_cost_per_eligible"] for r in [r_ily1, r_il30, r_cam, r_ohie]]
+oos_dr_se = [1.96 * r["honest_oos_dr_martingale"]["se_per_eligible"] for r in [r_ily1, r_il30, r_cam, r_ohie]]
 oos_cf    = [r["honest_oos_cf"]["net_cost_per_eligible"] for r in [r_ily1, r_il30, r_cam, r_ohie]]
 oos_cf_se = [1.96 * r["honest_oos_cf"]["se_per_eligible"] for r in [r_ily1, r_il30, r_cam, r_ohie]]
 
 xr = np.arange(len(rct_labels))
 ax1.axhline(0, color="black", lw=1.0, ls="--")
 ax1.errorbar(xr - 0.20, naive_emp, yerr=naive_se, fmt="s", color=OI_GREEN, capsize=3.5, ms=6.5, lw=1.5, label="Naive in-sample ML (apparent)")
-ax1.errorbar(xr,        oos_dr,    yerr=oos_dr_se, fmt="o", color=OI_BLUE,  capsize=3.5, ms=6.5, lw=1.5, label="Honest cross-fitted OOS DR-Learner")
+ax1.errorbar(xr,        oos_dr,    yerr=oos_dr_se, fmt="o", color=OI_BLUE,  capsize=3.5, ms=6.5, lw=1.5, label="Honest martingale OOS DR-Learner")
 ax1.errorbar(xr + 0.20, oos_cf,    yerr=oos_cf_se, fmt="D", color=OI_ORANGE,capsize=3.5, ms=6.0, lw=1.5, label="Honest cross-fitted OOS Causal Forest")
 ax1.set_xticks(xr)
 ax1.set_xticklabels(rct_labels, fontsize=8.0)
@@ -350,7 +350,7 @@ for lbl, tkey, c0v, perm_k in [
         "Skew / σ_Γ": f"{ht['skewness']:.1f} / {fmt_d(ht['aipw_pseudo_outcome_sd_sigma_gamma'],0,False)}",
         "N_req (-$500/yr, q=20%)": f"{ht['theorem3_ncrit']['by_target_saving_usd_yr']['minus_500']['N_power80_total_trial_q20']:,.0f}",
         "Naive In-Sample Emp (Plug-In)": f"{fmt_d(cr['naive_insample_matched_emp']['net_cost_per_eligible'],0,True)} ({fmt_d(cr['naive_insample_matched_plugin']['net_cost_per_eligible'],0,True)})",
-        "Honest OOS DR (95% CI)": f"{fmt_d(cr['honest_oos_dr']['net_cost_per_eligible'],0,True)} ({fmt_d(cr['honest_oos_dr']['ci_low_per_eligible'],0,True)} to {fmt_d(cr['honest_oos_dr']['ci_high_per_eligible'],0,True)})",
+        "Martingale OOS DR (95% CI)": f"{fmt_d(cr['honest_oos_dr_martingale']['net_cost_per_eligible'],0,True)} ({fmt_d(cr['honest_oos_dr_martingale']['ci_low_per_eligible'],0,True)} to {fmt_d(cr['honest_oos_dr_martingale']['ci_high_per_eligible'],0,True)})",
         "Honest OOS CF": fmt_d(cr["honest_oos_cf"]["net_cost_per_eligible"], 0, True),
         "Null Perm Naive FP": f"{100*pm_d['naive_insample_matched']['fp_sign_flip_rate_p05']:.1f}%",
         "Null Perm Martingale Type-I": f"{100*pm_d['honest_oos_aipw']['type1_error_one_sided_savings_p05']:.1f}%",
